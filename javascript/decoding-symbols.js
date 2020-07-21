@@ -1,0 +1,57 @@
+let d={};
+
+
+// 25
+function decode(char){
+	if(char===" "){
+		return true;
+	}else if(char==="}"){
+		return true;
+	}else if(char==="="){
+		return true;
+	}else if(char==="+"){
+		return true;
+	}else if(char==="]"){
+		return true;
+	}else if(char===")"){
+		return true;
+	}else if(char==="`"){
+		return true;
+	}else if(char==="|"){
+		return true;
+	}else if(char==="-"){
+		return true;
+	}else if(char==="["){
+		return true;
+	}else if(char==="("){
+		return true;
+	}else if(char==="{"){
+		return true;
+	}else if(char==="'"){
+		return true;
+	}else if(char==='"'){
+		return true;
+	}else if(char==="&"){
+		return true;
+	}else if(char==="*"){
+		return true;
+	}else if(char==="%"){
+		return true;
+	}else if(char==="!"){
+		return true;
+	}else if(char===":"){
+		return true;
+	}else if(char===";"){
+		return true;
+	}else if(char===","){
+		return true;
+	}else if(char==="<"){
+		return true;
+	}else if(char===">"){
+		return true;
+	}else if(char==="/"){
+		return true;
+	}else if(char==="?"){
+		return true;
+	}
+}
