@@ -7,6 +7,10 @@ function decode(char){
 		return true;
 	}else if(char==="}"){
 		return true;
+	}else if(char==="\n"){
+		return true;
+	}else if(char==="."){
+		return true;
 	}else if(char==="="){
 		return true;
 	}else if(char==="+"){
