@@ -10,10 +10,9 @@ let in_val_checkout="";
 let in_array_index=0;
 let in_array_chartAt_index=0;
 let in_array=[""];
-let first_type=false;
 let iACAI_IAI_relation={0:-1};
-
-
+let js_array_code;
+let js="";
 
 
 
@@ -27,10 +26,7 @@ $out_js.on("focus",function(){
 
 // console.log($in_rj);
 $in_rj.on('keyup',function(e){
-	if(first_type===false){
-		this.value="";
-		first_type=true;//clear last sessen code
-	}
+
 	in_val=this.value;
 	// console.log(in_val);
 	console.log("loop is working");
@@ -60,7 +56,13 @@ $in_rj.on('keyup',function(e){
 				console.log("its defult");
 				in_array_index++;//put the current key into the next array var
 				in_array_chartAt_index=0;
-				in_array[in_array_index]="";//clear undefined
+				if(in_val.charAt(i)==='"'){
+					console.log("one");
+					in_array[in_array_index]='';
+				}else{
+					console.log("two");
+					in_array[in_array_index]="";//clear undefined
+				}
 				in_array[in_array_index]+=in_val.charAt(i);//add key
 				in_array_chartAt_index++;//rise the character tracer by 1;
 				iACAI_IAI_relation[in_array_index]=in_array_chartAt_index-1;
@@ -81,12 +83,20 @@ $in_rj.on('keyup',function(e){
 		// if("="){console.log("= is working");}
 		// if("=="){console.log("== is working");}
 	}
+	js_array_code=s.syntax(in_array);
+	js=c.arrayToString(js_array_code);
+	$out_js.val(js);
+	eval(js);
 	console.log("in array.chartAt:",in_array[in_array_index].charAt(iACAI_IAI_relation[in_array_index]));
 	console.log("in array:",in_array[in_array_index]);
 	console.log("key",e.key);
 	console.log("d.tNS",d.tNS(in_array[in_array_index].charAt(iACAI_IAI_relation[in_array_index]),e.key));
 	console.log(iACAI_IAI_relation);
-	console.log(in_array);
+
+
+	console.log("rj_array",in_array);
+	console.log("js_array",js_array_code);
+	console.log(js);
 	in_val_checkout=in_val;//end if();
 
 });

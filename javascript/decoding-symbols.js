@@ -94,37 +94,5 @@ function trakeNextSymbol(firstSymbol,secendSymbol){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 d.decode=decode;
 d.tNS=trakeNextSymbol;

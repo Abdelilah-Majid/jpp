@@ -16,15 +16,14 @@ getElementsByTagName()/gEBTN()
 createAttribute()/cA()
 createElement()/cE()
 createTextNode()/cTN()
-innerHTML/iHTML
 innerText/iT
 className/cN
 id/id
 addEventListener()/aEL()
-appendChild()/appC()
+appendChild()/appCh()
 event/event
 
-jquery:
+jquery/rj:
 $/$
 each()/each()
 find()/choose()
@@ -44,13 +43,14 @@ show()/light()
 slideDown()sD()
 slideToggle()/sT()
 slideUp()/sU()
-stop()/stande()
+stop()/stand()
 addClass()/aC()
 append()/app()
 attr()/attr()
-hassClass()/hC()
+hasClass()/hC()
 index()/cownt()
 eq()/eq()
 not()/no()
+text()/text()
 
 
