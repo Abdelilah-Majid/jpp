@@ -1,3 +1,15 @@
-body{background: mediumpurple;}
-main{}
-textarea{width: 48vw;height: 100vh;display: inline;}
+body{background: white;}
+.center{text-align: center;}
+textarea{width: 44.75vw;height: 100vh;display: inline;margin: 0 ; display: inline-block;clear: both;}
+div.textarea{display: flex;justify-content: center;clear: both;}
+
+.div{
+	width: 90vw;
+	height: 100vh;
+	background: white;
+	margin: 0 auto;
+	border:1px solid black;
+}
+
+.inline{display: inline;}
+.height-marjin{margin-left: 18vw;margin-right: 30vw;}
