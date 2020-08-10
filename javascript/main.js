@@ -85,8 +85,16 @@ $in_rj.on('keyup',function(e){
 	}
 	js_array_code=s.syntax(in_array);
 	js=c.arrayToString(js_array_code);
-	$out_js.val(js);
-	eval(js);
+	rj_array_code=rev.xx(in_array);
+	rj=c.arrayToString(rj_array_code);
+	if(in_array[0]==="js"){
+		$out_js.val(rj);
+		eval(in_val);
+	}else{
+		$out_js.val(js);
+		eval(js);
+
+	}
 	// console.log("in array.chartAt:",in_array[in_array_index].charAt(iACAI_IAI_relation[in_array_index]));
 	// console.log("in array:",in_array[in_array_index]);
 	// console.log("key",e.key);
