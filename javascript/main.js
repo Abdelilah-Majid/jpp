@@ -108,3 +108,24 @@ $in_rj.on('keyup',function(e){
 	in_val_checkout=in_val;//end if();
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let example_one=``;

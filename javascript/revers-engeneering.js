@@ -126,6 +126,8 @@ function x(rj_array_code){
 			js_array_code[i]="no";
 		}else if(rj_array_code[i]==="text") {
 			js_array_code[i]="text";
+		}else if(rj_array_code[i]==="animate") {
+			js_array_code[i]="anim";
 		}
 		// some secuerety stuff
 		else if(rj_array_code[i]==="html") {

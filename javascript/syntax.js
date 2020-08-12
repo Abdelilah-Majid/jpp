@@ -57,7 +57,9 @@ function syntax(rj_array_code){
 			js_array_code[i]="appendChild";
 		}else if(rj_array_code[i]==="event") {
 			js_array_code[i]="event";
-		}else if(rj_array_code[i]==="write") {
+		}
+		//some securety stuff
+		else if(rj_array_code[i]==="write") {
 			js_array_code[i]="notWright";
 		}else if(rj_array_code[i]==="innerHTML") {
 			js_array_code[i]="notInnerHTML";
@@ -124,7 +126,11 @@ function syntax(rj_array_code){
 			js_array_code[i]="not";
 		}else if(rj_array_code[i]==="text") {
 			js_array_code[i]="text";
-		}else if(rj_array_code[i]==="html") {
+		}else if(rj_array_code[i]==="anim") {
+			js_array_code[i]="animate";
+		}
+		//some securety stuff
+		else if(rj_array_code[i]==="html") {
 			js_array_code[i]="notHtml";
 		}else{
 			js_array_code[i]=rj_array_code[i];
