@@ -115,17 +115,6 @@ $in_rj.on('keyup',function(e){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-let example_one=``;
+$(".buttons").children().on("click",function(e){
+	$in_rj.keyup();
+})
