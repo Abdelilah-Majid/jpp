@@ -118,3 +118,146 @@ $in_rj.on('keyup',function(e){
 $(".buttons").children().on("click",function(e){
 	$in_rj.keyup();
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let $photo_viewer_content=$(`<div id="photo-viewer"></div>
+<div id="thumbnails">
+	<a href="./IMGs/thumb-0.jpg" class="thumb active" title="glory tree"> <img width="100" height="100" class="thumb-img" src="./IMGs/thumb-0.jpg" alt="glory tree"> </a>
+	<a href="./IMGs/thumb-1.jpg" class="thumb " title="anime girle"> <img width="100" height="100" class="thumb-img" src="./IMGs/thumb-1.jpg" alt="anime girle"> </a>
+	<a href="./IMGs/thumb-2.jpg" class="thumb " title="alian shape"> <img width="100" height="100" class="thumb-img" src="./IMGs/thumb-2.jpg" alt="alian shape"> </a>
+	<a href="./IMGs/loading.jpg" class="thumb " title="alian shape"> <img width="100" height="100" class="thumb-img" src="./IMGs/loading.jpg" alt="alian shape"> </a>
+</div>`);
+$(".div").children().remove();
+$(".div").append($photo_viewer_content);
+
+
+var request,$current;
+var cache={};
+var $frame=$("#photo-viewer");
+var $thumbs=$(".thumb");
+$frame.css({
+	position:"relative",
+	left:"25vw"
+});
+$("#thumbnails").css({
+	position:"relative",
+	left:"28vw",
+	top:"330px"
+});
+function crossfade($img){
+
+if ($current){
+	$current.stop().fadeOut("slow");
+}
+$frame.children().css({position:"absolute"});
+$img.css({width:"517px",height:"320px"});
+$img.css({
+	// marginLeft:-$img.width()/2,
+	// marginTop:-$img.height()/2
+});
+
+$img.stop().fadeTo("slow",1);
+
+$current=$img;
+}
+
+$(document).on("click",".thumb",function(e){
+var $img;
+var src=this.href;
+var secure=false;
+request=src;
+
+e.preventDefault();
+
+$thumbs.removeClass("active");
+$(this).addClass("active");
+
+if (cache.hasOwnProperty(src)) {
+	if (cache[src].isLoading===false){
+		crossfade(cache[src].$img);
+	}
+}else{
+	$img=$("<img/>");
+	cache[src]={
+		$img:$img,
+		isLoading:true
+	};
+	$img.on("load",function(){
+		$img.hide();
+
+		$frame.removeClass("is-loading").append($img);
+		cache[src].isLoading=false;
+
+		if (request===src) {
+			// if($(":animated"))
+			if($(":animated")!==$()){console.log("it is working");}
+			crossfade($img);
+			console.log("animated: ",$(":animated"));
+
+		}
+	});
+
+	$frame.addClass("is-loading");
+	console.log(this);
+	console.log($($img));
+
+	$img.attr({
+		"src":src,
+		"alt":this.title||""
+	});
+}
+
+});
+
+$(".thumb").eq(0).click();
+console.log("animated2: ",$(":animated"));

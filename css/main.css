@@ -16,6 +16,9 @@ div.textarea{display: flex;justify-content: center;clear: both;}
 	margin: 0 auto;
 	border:1px solid black;
 	overflow: auto;
+	/* display: flex; */
+	/* justify-content: space-around; */
+	
 }
 
 .inline{display: inline;}
