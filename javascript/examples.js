@@ -23,17 +23,17 @@ $img3=$('<img src="./example-1-imgs/3.jpg" alt="" id="div-img3">');
 
 
 
-// con.log($img0.children());
+// con.log($img0.chld());
 
-$div_1.children().remove();
+$div_1.chld().delete();
 $div_1.app($img0,$img1,$img2,$img3);
-$div_1.children("img").css("width","25vw");
-$div_1.children("img").css("height","35vh");
-$div_1.css("position","relative");
-$div_1.css("display","inline-block");
-$div_1.css("left","4.8vw")
-$div_1.children("img").css("position","absolute");
-$div_1.children("img").css({
+$div_1.chld("img").caStSh("width","25vw");
+$div_1.chld("img").caStSh("height","35vh");
+$div_1.caStSh("position","relative");
+$div_1.caStSh("display","inline-block");
+$div_1.caStSh("left","4.8vw")
+$div_1.chld("img").caStSh("position","absolute");
+$div_1.chld("img").caStSh({
 	left:"60vw",
 	top:"50vh",
         border:"4px solid black"
@@ -231,10 +231,10 @@ sps $accordion=$(\`<ul class='accordion'>
 			</div>
 		</li>
 	</ul>\`);
-$(".div").children().delete();
+$(".div").chld().delete();
 $(".div").app($accordion);
-$(".div").children("ul").children("h1").css({color:"yellowgreen"})
-$(".accordion-controler").css({width:"100%"})
+$(".div").chld("ul").chld("h1").caStSh({color:"yellowgreen"})
+$(".accordion-controler").caStSh({width:"100%"})
 $(".accordion-panel").text(accordion_content);
 $('.accordion').when("click",'.accordion-controler',func(e){//when you use ()=>{this and $(this) returns window} but when you use func(){this returns what it shold return}
 e.preventDefault();
@@ -243,7 +243,7 @@ $(this)
 	.no(":animated")
 	.sT();
 
-});`
+});`;
 
 
 
@@ -265,48 +265,48 @@ $(this)
 
 
 let example_2=`
-let $photo_viewer_content=$(\`<div id="photo-viewer"></div>
+sps $photo_viewer_content=$(\`<div id="photo-viewer"></div>
 <div id="thumbnails">
 	<a href="./IMGs/thumb-0.jpg" class="thumb active" title="glory tree"> <img width="100" height="100" class="thumb-img" src="./IMGs/thumb-0.jpg" alt="glory tree"> </a>
 	<a href="./IMGs/thumb-1.jpg" class="thumb " title="anime girle"> <img width="100" height="100" class="thumb-img" src="./IMGs/thumb-1.jpg" alt="anime girle"> </a>
 	<a href="./IMGs/thumb-2.jpg" class="thumb " title="alian shape"> <img width="100" height="100" class="thumb-img" src="./IMGs/thumb-2.jpg" alt="alian shape"> </a>
 	<a href="./IMGs/loading.jpg" class="thumb " title="alian shape"> <img width="100" height="100" class="thumb-img" src="./IMGs/loading.jpg" alt="alian shape"> </a>
 </div>\`);
-$(".div").children().remove();
-$(".div").append($photo_viewer_content);
+$(".div").chld().delete();
+$(".div").app($photo_viewer_content);
 
 
 var request,$current;
 var cache={};
 var $frame=$("#photo-viewer");
 var $thumbs=$(".thumb");
-$frame.css({
+$frame.caStSh({
 	position:"relative",
 	left:"25vw"
 });
-$("#thumbnails").css({
+$("#thumbnails").caStSh({
 	position:"relative",
 	left:"28vw",
 	top:"330px"
 });
-function crossfade($img){
+func crossfade($img){
 
 if ($current){
-	$current.stop().fadeOut("slow");
+	$current.stand().fO("slow");
 }
-$frame.children().css({position:"absolute"});
-$img.css({width:"517px",height:"320px"});
-$img.css({
+$frame.chld().caStSh({position:"absolute"});
+$img.caStSh({width:"517px",height:"320px"});
+$img.caStSh({
 	// marginLeft:-$img.width()/2,
 	// marginTop:-$img.height()/2
 });
 
-$img.stop().fadeTo("slow",1);
+$img.stand().fadeTo("slow",1);
 
 $current=$img;
 }
 
-$(document).on("click",".thumb",function(e){
+$(htmlDoc).when("click",".thumb",func(e){
 var $img;
 var src=this.href;
 var secure=false;
@@ -314,8 +314,8 @@ request=src;
 
 e.preventDefault();
 
-$thumbs.removeClass("active");
-$(this).addClass("active");
+$thumbs.rC("active");
+$(this).aC("active");
 
 if (cache.hasOwnProperty(src)) {
 	if (cache[src].isLoading===false){
@@ -327,24 +327,24 @@ if (cache.hasOwnProperty(src)) {
 		$img:$img,
 		isLoading:true
 	};
-	$img.on("load",function(){
-		$img.hide();
+	$img.when("load",func(){
+		$img.dark();
 
-		$frame.removeClass("is-loading").append($img);
+		$frame.rC("is-loading").app($img);
 		cache[src].isLoading=false;
 
 		if (request===src) {
 			// if($(":animated"))
-			if($(":animated")!==$()){console.log("it is working");}
+			if($(":animated")!==$()){con.log("it is working");}
 			crossfade($img);
-			console.log("animated: ",$(":animated"));
+			con.log("animated: ",$(":animated"));
 
 		}
 	});
 
-	$frame.addClass("is-loading");
-	console.log(this);
-	console.log($($img));
+	$frame.aC("is-loading");
+	con.log(this);
+	con.log($($img));
 
 	$img.attr({
 		"src":src,
@@ -355,7 +355,8 @@ if (cache.hasOwnProperty(src)) {
 });
 
 $(".thumb").eq(0).click();
-console.log("animated2: ",$(":animated"));
+con.log("animated2: ",$(":animated"));
+
 
 `
 
@@ -381,7 +382,103 @@ console.log("animated2: ",$(":animated"));
 
 
 
+let example_3=`
+sps search=$(\`<header>
+	<h1 id="h1-head2">Creative Folk</h1>
 
+</header>
+
+<div id="search">
+	<input type="text" placeholder="filter by search" id="filter-search">
+</div>
+<div id="gallery-1">
+	<img src="./IMGs/loading.jpg" data-tags="Animators,Illustrators" alt="rabbit" class="gallery-img">
+	<img src="./IMGs/thumb-0.jpg" data-tags="Photographers,Filmmakers" alt="sea" class="gallery-img">
+	<img src="./IMGs/thumb-1.jpg" data-tags="Photographers,Filmmakers" alt="deer" class="gallery-img">
+	<img src="./IMGs/thumb-2.jpg" data-tags="Designers" alt="new youk street maptrumpet player" class="gallery-img">
+	<img src="./IMGs/thumb-3.jpg" data-tags="ilmmakers" alt="logo indent" class="gallery-img">
+	<img src="./IMGs/thumb-4.jpg" data-tags="Designers,Animators" alt="bicyicle japan" class="gallery-img">
+	<img src="./IMGs/thumb-5.jpg" data-tags="Photographers" alt="gost" class="gallery-img">
+	<img src="./IMGs/thumb-6.jpg" data-tags="Designers" alt="trumpet player" class="gallery-img">
+	<img src="./IMGs/thumb-7.jpg" data-tags="Animators,Illustrators" alt="aqua logo" class="gallery-img">
+</div>
+\`);
+
+
+$(".div").chld().delete();
+$(".div").app(search);
+
+
+(func(){
+
+	var $imgs=$("#gallery-1 img");
+	// con.log('$imgs',$imgs);
+	var $search=$("#filter-search");
+	// con.log($search);
+	var cache=[];
+	var $div_search=$("#search")
+	$search.caStSh({
+		width:"20%"
+	})
+	$search.when(" focus",func(){
+		$(this).anim({width:"90%"});
+	});
+	$search.when(" blur",func(){
+		$(this).anim({width:"20%"});
+	});
+	$div_search.caStSh({
+		display:"flex",
+		justifyContent:"center"
+	})
+	$("#h1-head2").caStSh({
+		margin:"0 40%"
+	});
+	$("#gallery-1").caStSh({
+		marginLeft:"5%"
+	})
+	$imgs.caStSh({
+		width:"31.267%",
+		height:"250px"
+	})
+	$imgs.each(func(){
+		cache.push({
+			element:this,
+			text:this.alt.trim().toLowerCase()
+		});
+		// con.log("img-this",this.alt);
+	});
+
+	func filter(){
+		var query=this.value.trim().toLowerCase();
+		con.log(this.value);
+
+
+		cache.forEach(func(img){
+			var cownt;
+
+			if(query){
+				cownt=img.text.indexOf(query);
+				con.log(cownt);
+			}
+
+			if(cownt===-1){
+				img.element.style.display="none"
+			}else{
+				img.element.style.display="inline"
+
+			}
+
+		})
+	}
+
+	if("oninput"in $search){
+		$search.when("input",filter);
+	}else{
+		$search.when("keyup",filter)
+	}
+}());
+
+`;
 
 
 
@@ -459,9 +556,12 @@ console.log("animated2: ",$(":animated"));
 $buttons_array[0].on('click',function(e){
 	$in_rj_1.val(example_0);
 });
-$buttons_array[1].on("click",function(e){
+$buttons_array[3].on("click",function(e){
 	$in_rj_1.val(example_1);
-})
+});
 $buttons_array[2].on("click",function(e){
 	$in_rj_1.val(example_2);
+});
+$buttons_array[1].on("click",function(e){
+	$in_rj_1.val(example_3);
 })

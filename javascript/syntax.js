@@ -128,6 +128,12 @@ function syntax(rj_array_code){
 			js_array_code[i]="text";
 		}else if(rj_array_code[i]==="anim") {
 			js_array_code[i]="animate";
+		}else if(rj_array_code[i]==="rC") {
+			js_array_code[i]="removeClass";
+		}else if(rj_array_code[i]==="chld") {
+			js_array_code[i]="children";
+		}else if(rj_array_code[i]==="caStSh") {
+			js_array_code[i]="css";
 		}
 		//some securety stuff
 		else if(rj_array_code[i]==="html") {

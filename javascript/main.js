@@ -1,5 +1,7 @@
+
 console.log("by the name of allah");
 
+"use strict";
 
 
 
@@ -117,7 +119,7 @@ $in_rj.on('keyup',function(e){
 
 $(".buttons").children().on("click",function(e){
 	$in_rj.keyup();
-})
+});
 $(function(){
 	$in_rj.keyup();
-}())
+}());
