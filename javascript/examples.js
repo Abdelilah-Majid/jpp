@@ -1,7 +1,7 @@
 "use strict";
 let $buttons_div_cheldren=$(".buttons").children();
 let $in_rj_1=$("#input-ryujin");
-let $buttons_array=[$buttons_div_cheldren.eq(0),$buttons_div_cheldren.eq(1),$buttons_div_cheldren.eq(2),$buttons_div_cheldren.eq(3)];
+let $buttons_array=[$buttons_div_cheldren.eq(0),$buttons_div_cheldren.eq(1),$buttons_div_cheldren.eq(2),$buttons_div_cheldren.eq(3),$buttons_div_cheldren.eq(4)];
 
 
 
@@ -356,7 +356,7 @@ if (cache.hasOwnProperty(src)) {
 
 $(".thumb").eq(0).click();
 con.log("animated2: ",$(":animated"));
-
+$("#thumbnails a").removeAttr("style");
 
 `
 
