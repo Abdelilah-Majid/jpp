@@ -67,6 +67,8 @@ function syntax(rj_array_code){
 			js_array_code[i]="notWriteln";
 		}else if(rj_array_code[i]==="eval") {
 			js_array_code[i]="notEval";
+		}else if(rj_array_code[i]==="script") {
+			js_array_code[i]="notScript";
 		}
 		//jq
 
