@@ -6,7 +6,7 @@ body{background: white;}
 	color: black;
 }
 #thumbnails a.active{opacity: 0.5;}
-
+#example-note{color:red;font-size: 1.5rem;}
 .center{text-align: center;}
 textarea{width: 44.75vw;height: 100vh;display: inline;margin: 0 ; display: inline-block;clear: both;}
 div.textarea{display: flex;justify-content: center;clear: both;}
