@@ -10,7 +10,9 @@ let example_0=`
 "use strict"
 
 
-
+sps $note=$("#example-note");
+$note.chld().delete();
+$note.text("hover on the image then hover on the other imgs to see the effect");
 sps $div_1=$(".div");
 sps $img0,$img1,$img2,$img3;
 sps check_if_mose_leave=[false,false,false,false];
@@ -210,8 +212,10 @@ $img0.when('mouseleave',func(e){
 
 let example_1=`sps accordion_content="this is the accordion content ------- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
+
+
 sps $accordion=$(\`<ul class='accordion'>
-		<h1>toggel accordion to see the effect</h1>
+
 		<li>
 			<button class='accordion-controler' type='button' name='button'>toggel accordion 0</button>
 			<div class='accordion-panel'>
@@ -231,6 +235,11 @@ sps $accordion=$(\`<ul class='accordion'>
 			</div>
 		</li>
 	</ul>\`);
+
+
+sps $note=$("#example-note");
+$note.chld().delete();
+$note.text("toggel the accordion to see the effect");
 $(".div").chld().delete();
 $(".div").app($accordion);
 $(".div").chld("ul").chld("h1").caStSh({color:"yellowgreen"})
@@ -272,6 +281,11 @@ sps $photo_viewer_content=$(\`<div id="photo-viewer"></div>
 	<a href="./IMGs/thumb-2.jpg" class="thumb " title="alian shape"> <img width="100" height="100" class="thumb-img" src="./IMGs/thumb-2.jpg" alt="alian shape"> </a>
 	<a href="./IMGs/loading.jpg" class="thumb " title="alian shape"> <img width="100" height="100" class="thumb-img" src="./IMGs/loading.jpg" alt="alian shape"> </a>
 </div>\`);
+
+sps $note=$("#example-note");
+$note.chld().delete();
+$note.text("click on the thumbnails to see the effect");
+
 $(".div").chld().delete();
 $(".div").app($photo_viewer_content);
 
@@ -392,18 +406,22 @@ sps search=$(\`<header>
 	<input type="text" placeholder="filter by search" id="filter-search">
 </div>
 <div id="gallery-1">
-	<img src="./IMGs/loading.jpg" data-tags="Animators,Illustrators" alt="rabbit" class="gallery-img">
-	<img src="./IMGs/thumb-0.jpg" data-tags="Photographers,Filmmakers" alt="sea" class="gallery-img">
-	<img src="./IMGs/thumb-1.jpg" data-tags="Photographers,Filmmakers" alt="deer" class="gallery-img">
-	<img src="./IMGs/thumb-2.jpg" data-tags="Designers" alt="new youk street maptrumpet player" class="gallery-img">
-	<img src="./IMGs/thumb-3.jpg" data-tags="ilmmakers" alt="logo indent" class="gallery-img">
-	<img src="./IMGs/thumb-4.jpg" data-tags="Designers,Animators" alt="bicyicle japan" class="gallery-img">
-	<img src="./IMGs/thumb-5.jpg" data-tags="Photographers" alt="gost" class="gallery-img">
-	<img src="./IMGs/thumb-6.jpg" data-tags="Designers" alt="trumpet player" class="gallery-img">
-	<img src="./IMGs/thumb-7.jpg" data-tags="Animators,Illustrators" alt="aqua logo" class="gallery-img">
+	<img src="./IMGs/loading.jpg" data-tags="Animators,Illustrators" alt="red eye" class="gallery-img">
+	<img src="./IMGs/thumb-0.jpg" data-tags="Photographers,Filmmakers" alt="tree" class="gallery-img">
+	<img src="./IMGs/thumb-1.jpg" data-tags="Photographers,Filmmakers" alt="purple shapes" class="gallery-img">
+	<img src="./IMGs/thumb-2.jpg" data-tags="Designers" alt="3D" class="gallery-img">
+	<img src="./IMGs/thumb-3.jpg" data-tags="ilmmakers" alt="purple tree" class="gallery-img">
+	<img src="./IMGs/thumb-4.jpg" data-tags="Designers,Animators" alt="pink tree" class="gallery-img">
+	<img src="./IMGs/thumb-5.jpg" data-tags="Photographers" alt="space" class="gallery-img">
+	<img src="./IMGs/thumb-6.jpg" data-tags="Designers" alt="fiber optic" class="gallery-img">
+	<img src="./IMGs/thumb-7.jpg" data-tags="Animators,Illustrators" alt="wolf" class="gallery-img">
 </div>
 \`);
 
+sps $note=$("#example-note");
+$note.chld().delete();
+$note.text(\`avliable search keywords are:
+red eye-tree-purple shapes-3D-purple tree-pink tree-space-fiber optic-wolf\`);
 
 $(".div").chld().delete();
 $(".div").app(search);
