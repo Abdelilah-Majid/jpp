@@ -1,12 +1,9 @@
 "use strict";
-let $buttons_div_cheldren=$(".buttons").children();
-let $in_rj_1=$("#input-ryujin");
-let $buttons_array=[$buttons_div_cheldren.eq(0),$buttons_div_cheldren.eq(1),$buttons_div_cheldren.eq(2),$buttons_div_cheldren.eq(3),$buttons_div_cheldren.eq(4)];
+let $buttons_div_cheldren = $(".buttons").children();
+let $in_rj_1 = $("#input-ryujin");
+let $buttons_array = [$buttons_div_cheldren.eq(0), $buttons_div_cheldren.eq(1), $buttons_div_cheldren.eq(2), $buttons_div_cheldren.eq(3), $buttons_div_cheldren.eq(4)];
 
-
-
-
-let example_0=`
+let example_0 = `
 "use strict"
 
 
@@ -107,6 +104,7 @@ $img2.when('mouseleave',func(e){
 	check_if_mose_leave[2]=false;
 	check_if_no_mose_is_enter[2]=0;
 
+	let timer_id = setInterval(function () {
 	for(sps i in check_if_mose_leave){
 		// sps ii=0;
 		if(check_if_mose_leave[i]===false){
@@ -118,10 +116,16 @@ $img2.when('mouseleave',func(e){
 			break;
 		}
 	}
-	if(fixing_animation===false){
-		$img2.stand().anim({top:"45vh"},500,()=>{});
 
-	}
+		if(fixing_animation===false){
+	
+			$img2.stand().anim({top:"45vh"},500,()=>{});
+	
+		}
+
+	
+		clearInterval(timer_id);
+	}, 1000);
 });
 $img1.when('mouseenter',func(e){
 	check_if_mose_leave[1]=true;
@@ -133,6 +137,8 @@ $img1.when('mouseenter',func(e){
 			break;
 		}
 	}
+
+	
 	// con.log($(e.target));
 	$img1.stand().anim({top:"15vh"},500,()=>{});
 });
@@ -140,22 +146,30 @@ $img1.when('mouseleave',func(e){
 	// con.log($(e.target));
 	check_if_mose_leave[1]=false;
 	check_if_no_mose_is_enter[1]=0;
+	let timer_id = setInterval(function () {
 
-	for(sps i in check_if_mose_leave){
-		// sps ii=0;
-		if(check_if_mose_leave[i]===false){
-			check_if_no_mose_is_enter[1]++;
-		}if(check_if_no_mose_is_enter[1]===4){
-			fixing_animation=true;
 
-			x1();
-			break;
+
+
+
+	
+		for(sps i in check_if_mose_leave){
+			// sps ii=0;
+			if(check_if_mose_leave[i]===false){
+				check_if_no_mose_is_enter[1]++;
+			}if(check_if_no_mose_is_enter[1]===4){
+				fixing_animation=true;
+				
+				x1();
+				break;
+			}
 		}
-	}
-	if(fixing_animation===false){
-		$img1.stand().anim({top:"40vh"},500,()=>{});
-
-	}
+		if(fixing_animation===false){
+			$img1.stand().anim({top:"40vh"},500,()=>{});
+			
+		}
+		clearInterval(timer_id);
+	}, 1000);
 });
 $img0.when('mouseenter',func(e){
 	// con.log($(e.target));
@@ -175,42 +189,32 @@ $img0.when('mouseleave',func(e){
 	check_if_mose_leave[0]=false;
 	check_if_no_mose_is_enter[0]=0;
 
-	for(sps i in check_if_mose_leave){
-		// sps ii=0;
-		if(check_if_mose_leave[i]===false){
-			check_if_no_mose_is_enter[0]++;
-		}if(check_if_no_mose_is_enter[0]===4){
-			fixing_animation=true;
+	let timer_id = setInterval(function () {
 
-			x1();
-			break;
+
+
+
+
+	
+		for(sps i in check_if_mose_leave){
+			// sps ii=0;
+			if(check_if_mose_leave[i]===false){
+				check_if_no_mose_is_enter[0]++;
+			}if(check_if_no_mose_is_enter[0]===4){
+				fixing_animation=true;
+				
+				x1();
+				break;
+			}
+		}if(fixing_animation===false){
+			$img0.stand().anim({top:"35vh"},500,()=>{});
+			
 		}
-	}if(fixing_animation===false){
-		$img0.stand().anim({top:"35vh"},500,()=>{});
-
-	}
+		clearInterval(timer_id);
+	}, 1000);
 });`;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let example_1=`sps accordion_content="this is the accordion content ------- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+let example_1 = `sps accordion_content="this is the accordion content ------- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
 
 
@@ -254,26 +258,7 @@ $(this)
 
 });`;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let example_2=`
+let example_2 = `
 sps $photo_viewer_content=$(\`<div id="photo-viewer"></div>
 <div id="thumbnails">
 	<a href="./IMGs/thumb-0.jpg" class="thumb active" title="glory tree"> <img width="100" height="100" class="thumb-img" src="./IMGs/thumb-0.jpg" alt="glory tree"> </a>
@@ -372,31 +357,9 @@ $(".thumb").eq(0).click();
 con.log("animated2: ",$(":animated"));
 $("#thumbnails a").removeAttr("style");
 
-`
+`;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let example_3=`
+let example_3 = `
 sps search=$(\`<header>
 	<h1 id="h1-head2">Creative Folk</h1>
 
@@ -498,88 +461,15 @@ $(".div").app(search);
 
 `;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$buttons_array[0].on('click',function(e){
-	$in_rj_1.val(example_0);
+$buttons_array[0].on("click", function (e) {
+  $in_rj_1.val(example_0);
 });
-$buttons_array[3].on("click",function(e){
-	$in_rj_1.val(example_1);
+$buttons_array[3].on("click", function (e) {
+  $in_rj_1.val(example_1);
 });
-$buttons_array[2].on("click",function(e){
-	$in_rj_1.val(example_2);
+$buttons_array[2].on("click", function (e) {
+  $in_rj_1.val(example_2);
 });
-$buttons_array[1].on("click",function(e){
-	$in_rj_1.val(example_3);
-})
+$buttons_array[1].on("click", function (e) {
+  $in_rj_1.val(example_3);
+});
